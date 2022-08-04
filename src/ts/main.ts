@@ -1,5 +1,5 @@
-import { PixiApp } from "./PixiApp";
-import * as PIXI from './pixi';
+import { PixiApp } from "./utils/PixiApp";
+import * as PIXI from './utils/pixi';
 
 window.onload = async () => {
     // Create the pixi app
