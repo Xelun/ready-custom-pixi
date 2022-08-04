@@ -38,4 +38,24 @@ window.onload = async () => {
 
     // Add the bunny to the scene
     APP.addVisual(sprite);
+
+    // Load a custom font
+    await APP.loadFont("SCRIPTIN", "/assets/SCRIPTIN.ttf");
+    
+    // Create a text
+    let text = new PIXI.Text("", { fontFamily: "SCRIPTIN", fill: 0x883333, align: "center", fontSize: 30, fontWeight: "bold" });
+    text.anchor.set(.5, .5);
+    text.x = APP.width * .5;
+    text.y = APP.height * .7;
+    text.text = APP.width + " x " + APP.height;
+
+    // Change the text and position everytime the app resizes
+    APP.onResize((width, height) => {
+        text.x = width * .5;
+        text.y = height * .7;
+        text.text = width + " x " + height;
+    });
+    
+    // Add the text to the scene
+    APP.addVisual(text);
 }
